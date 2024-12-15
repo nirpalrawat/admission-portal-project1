@@ -169,11 +169,11 @@ static changePassword = async (req, res) => {
         //console.log(isMatched)
         if (!isMatched) {
           req.flash("error", "Current password is incorrect ");
-          res.redirect("/admin/Password");
+          res.redirect("/admin/changePassword");
         } else {
           if (np != cp) {
             req.flash("error", "Password does not match");
-            res.redirect("/admin/Password");
+            res.redirect("/admin/changePassword");
           } else {
             const newHashPassword = await bcrypt.hash(np, 10);
             await UserModel.findByIdAndUpdate(id, {
@@ -185,7 +185,7 @@ static changePassword = async (req, res) => {
         }
       } else {
         req.flash("error", "ALL fields are required ");
-        res.redirect("/admin/Password");
+        res.redirect("/admin/changePassword");
       }
     } catch (error) {
       console.log(error);
