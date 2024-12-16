@@ -197,7 +197,7 @@ static changePassword = async (req, res) => {
         const { name, image } = req.userdata
         const data = await ContactModel.find()
         // console.log(data)
-        res.render('admin/contactdisplay', { d: data, n: name, i: image })
+        res.render('admin/contactDisplay', { d: data, n: name, i: image })
     } catch (error) {
         console.log(error)
     }
