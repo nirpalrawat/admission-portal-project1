@@ -296,7 +296,7 @@ class FrontController {
       }
       await UserModel.findByIdAndUpdate(id, data);
       req.flash("success", "Update Profile successfully");
-      res.redirect("/profile");
+      res.redirect("/logout");
     } catch (error) {
       console.log(error);
     }
