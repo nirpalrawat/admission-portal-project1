@@ -180,7 +180,7 @@ static changePassword = async (req, res) => {
               password: newHashPassword,
             });
             req.flash("success", "Password Updated successfully ");
-            res.redirect('/');
+            res.redirect('/logout');
           }
         }
       } else {
